@@ -33,7 +33,7 @@ build_script:
   - '%CYG_BASH% -lc "cd $APPVEYOR_BUILD_FOLDER; mkdir build_cygwin"'
   - '%CYG_BASH% -lc "cd $APPVEYOR_BUILD_FOLDER/build_cygwin; cmake .."'
   - '%CYG_BASH% -lc "cd $APPVEYOR_BUILD_FOLDER/build_cygwin; make"'
-  - '%CYG_BASH% -lc "cd $APPVEYOR_BUILD_FOLDER/build_cygwin; make test"'
+
 
   #
   # Visual Studio (MSBuild)
@@ -42,5 +42,13 @@ build_script:
   - cd build_msbuild
   - cmake -G "Visual Studio 15 2017 Win64" ..
   - msbuild ci_helloworld.sln
-  - ctest
   - cd ..
+
+artifacts:
+  - path: $APPVEYOR_BUILD_FORLDER/build_cygwin/t1.exe
+    name: artifacts-linux
+    type: zip
+  - path: $APPVEYOR_BUILD_FORLDER/build_msbuild/t1.exe
+    name: artifacts-vs
+    type: zip
+
