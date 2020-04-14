@@ -49,7 +49,7 @@ artifacts:
   - path: build_cygwin/t1.exe
     name: artifacts-linux
     type: zip
-  - path: build_msbuild/Realse/t1.exe
+  - path: build_msbuild/Release/t1.exe
     name: artifacts-vs
     type: zip
 
