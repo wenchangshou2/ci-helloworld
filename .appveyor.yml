@@ -46,10 +46,10 @@ build_script:
   - cd ..
 
 artifacts:
-  - path: $APPVEYOR_BUILD_FORLDER/build_cygwin/t1.exe
+  - path: build_cygwin/t1.exe
     name: artifacts-linux
     type: zip
-  - path: $APPVEYOR_BUILD_FORLDER/build_msbuild/t1.exe
+  - path: build_msbuild/t1.exe
     name: artifacts-vs
     type: zip
 
