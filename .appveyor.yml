@@ -42,14 +42,14 @@ build_script:
   - cd build_msbuild
   - cmake -G "Visual Studio 15 2017 Win64" ..
   - ls .
-  - msbuild t1.sln
+  - msbuild t1.sln  /t:Build /p:Configuration=Release
   - cd ..
 
 artifacts:
   - path: build_cygwin/t1.exe
     name: artifacts-linux
     type: zip
-  - path: build_msbuild/t1.exe
+  - path: build_msbuild/Realse/t1.exe
     name: artifacts-vs
     type: zip
 
