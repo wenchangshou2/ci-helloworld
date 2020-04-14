@@ -42,7 +42,7 @@ build_script:
   - cd build_msbuild
   - cmake -G "Visual Studio 15 2017 Win64" ..
   - ls .
-  - msbuild ci_helloworld.sln
+  - msbuild t1.sln
   - cd ..
 
 artifacts:
